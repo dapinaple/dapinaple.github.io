@@ -1,32 +1,30 @@
-const videoIds = [
-  "dQw4w9WgXcQ",
-  "Zi_XLOBDo_Y",
-  "kXYiU_JCYtU"
+const videos = [
+  { id: "YmvTv--1hFE", type: "short" } // galneryus raise my sword
 ];
 
 const grid = document.getElementById("videoGrid");
 
-videoIds.forEach(id => {
-  const wrapper = document.createElement("div");
-  wrapper.className = "video-card";
+videos.forEach(({ id, type }) => {
+  const card = document.createElement("div");
+  card.className = `video-card ${type}`;
 
-  wrapper.innerHTML = `
-    <div class="video-thumb" data-id="${id}">
-      <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="Guitar video">
+  card.innerHTML = `
+    <div class="video-thumb">
+      <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg">
       <div class="play-button">▶</div>
     </div>
   `;
 
-  wrapper.querySelector(".video-thumb").addEventListener("click", () => {
-    wrapper.innerHTML = `
+  card.querySelector(".video-thumb").onclick = () => {
+    card.innerHTML = `
       <iframe
         src="https://www.youtube.com/embed/${id}?autoplay=1"
-        frameborder="0"
         allow="autoplay; encrypted-media"
         allowfullscreen>
       </iframe>
     `;
-  });
+  };
 
-  grid.appendChild(wrapper);
+  grid.appendChild(card);
 });
+
