@@ -171,6 +171,19 @@ footer {
   font-size: 3rem;
   color: white;
   background: rgba(0,0,0,0.35);
+
+  /* Normal videos (16:9) */
+.video-card.video {
+  aspect-ratio: 16 / 9;
+}
+
+/* Shorts (9:16) */
+.video-card.short {
+  aspect-ratio: 9 / 16;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
   transition: background 0.2s;
 }
 
