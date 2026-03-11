@@ -1,5 +1,7 @@
 const videos = [
-  { id: "YmvTv--1hFE", type: "short" } // galneryus raise my sword
+  { id: "YmvTv--1hFE", type: "short",  // galneryus raise my sword 
+    id: "wu1giNm8KW0",type:"short} //a7x seize the day        
+
 ];
 
 const grid = document.getElementById("videoGrid");
